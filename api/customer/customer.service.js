@@ -29,7 +29,7 @@ module.exports = {
     },
     getCustomer: callBack => {
         pool.query(
-            `select * from customer;`,
+            `select * from userDetails;`,
             [],
             (error,results,fields) => {
                 if(error){
@@ -41,7 +41,7 @@ module.exports = {
     },
     getCustomerById: (customer_code, callBack) => {
         pool.query(
-            `select * from customer where customer_code = ?;`,
+            `select * from userDetails where id = ?;`,
             [
                 customer_code
             ],

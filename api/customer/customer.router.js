@@ -4,7 +4,7 @@ const { checkToken } = require("../../auth/token_validation");
 
 router.post("/", checkToken, createCustomer);
 router.get("/", checkToken, getCustomer);
-router.get("/:customer_code", getCustomerById);
+router.get("/:customer_code", checkToken, getCustomerById);
 router.patch("/", checkToken, updateCustomer);
 router.post("/token_generator", token_generator);
 
