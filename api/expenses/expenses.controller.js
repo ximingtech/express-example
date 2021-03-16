@@ -1,10 +1,10 @@
-const { getIncomeList, getIncomeListByID, updateIncomeListByID, createIncomeList, token_generator } = require("./income.service");
+const { getExpenses, getExpensesByID, updateExpensesByID, createExpenses, token_generator } = require("./expenses.service");
 const { sign } = require("jsonwebtoken");
 
 module.exports = {
-    createIncomeList: (req, res) => {
+    createExpenses: (req, res) => {
         const body = req.body;
-        createIncomeList(body, (err, results) => {
+        createExpenses(body, (err, results) => {
             if (err) {
                 console.log(err);
                 return res.status(500).json({
@@ -18,8 +18,8 @@ module.exports = {
             })
         })
     },
-    getIncomeList: (req, res) => {
-        getIncomeList((err, results) => {
+    getExpenses: (req, res) => {
+        getExpenses((err, results) => {
             if (err) {
                 console.log(err);
                 return;
@@ -30,9 +30,9 @@ module.exports = {
             })
         })
     },
-    getIncomeListByID: (req, res) => {
+    getExpensesByID: (req, res) => {
         const customer_code = req.params.customer_code;
-        getIncomeListByID(customer_code, (err, results) => {
+        getExpensesByID(customer_code, (err, results) => {
             if (err) {
                 console.log(err);
                 return;
@@ -49,9 +49,9 @@ module.exports = {
             })
         })
     },
-    updateIncomeListByID: (req, res) => {
+    updateExpensesByID: (req, res) => {
         const body = req.body;
-        updateIncomeListByID(body, (err, results) => {
+        updateExpensesByID(body, (err, results) => {
             if (err) {
                 console.log(err);
                 return;
