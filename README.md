@@ -1,0 +1,3 @@
+- This is backend services for financial management application.
+- This is rest api to support the web application to show the data and manage the data amount.
+- This backend is develop by express.js
